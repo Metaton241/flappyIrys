@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Irys - GitHub Pages</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/irys.png">
+    <meta name="description" content="Flappy Bird game with Irys character - play online for free!">
+    <meta name="keywords" content="flappy bird, game, irys, online game, browser game">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Flappy Irys - Online Game">
+    <meta property="og:description" content="Play Flappy Bird with Irys character! Challenge yourself with different difficulty levels.">
+    <meta property="og:image" content="images/irys.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flappy Irys - Online Game">
+    <meta name="twitter:description" content="Play Flappy Bird with Irys character! Challenge yourself with different difficulty levels.">
+    <meta name="twitter:image" content="images/irys.png">
+</head>
+<body>
+    <div class="container">
+        <button id="langBtn" class="lang-btn">🌐 EN</button>
+        
+        <div id="mainMenu" class="screen active">
+            <div class="game-header">
+                <h1 class="game-title" data-i18n="game_title">FLAPPY IRYS</h1>
+                <div class="best-score">
+                    <span data-i18n="best_score_prefix">BEST SCORE: </span><span id="bestScoreMain">0</span>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="menu-section">
+                    <button id="playBtn" class="btn btn-primary" data-i18n="play_btn">PLAY</button>
+                    <button id="settingsBtn" class="btn btn-secondary" data-i18n="settings_btn">SETTINGS</button>
+                    
+                    <div class="difficulty-selector">
+                        <label for="mainDifficultySelect" data-i18n="score_multiplier">SCORE MULTIPLIER</label>
+                        <select id="mainDifficultySelect" class="difficulty-select">
+                            <option value="easy" data-i18n="difficulty_easy">EASY (x1)</option>
+                            <option value="normal" data-i18n="difficulty_normal">NORMAL (x2)</option>
+                            <option value="hard" data-i18n="difficulty_hard">HARD (x3)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="leaderboard-panel">
+                    <h3 data-i18n="leaderboard_title">TOP PLAYERS</h3>
+                    <div id="leaderboardList" class="leaderboard-list">
+                        <div class="leaderboard-item">
+                            <span class="no-records" data-i18n="no_records">NO RECORDS YET</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="settingsScreen" class="screen">
+            <h2 data-i18n="settings_btn">SETTINGS</h2>
+            <div class="settings-group">
+                <label class="setting-item">
+                    <span data-i18n="sound_label">SOUND</span>
+                    <input type="checkbox" id="soundToggle" checked>
+                </label>
+            </div>
+            <button id="backFromSettings" class="btn btn-secondary" data-i18n="back_btn">BACK</button>
+        </div>
+
+        <div id="gameScreen" class="screen">
+            <div class="game-ui">
+                <div class="score-display">
+                    <span id="score">0</span>
+                </div>
+                <div class="game-controls">
+                    <button id="pauseBtn" class="btn btn-small" data-i18n="pause_btn">PAUSE</button>
+                </div>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <div id="pauseScreen" class="screen">
+            <h2 data-i18n="pause_btn">PAUSE</h2>
+            <button id="resumeBtn" class="btn btn-primary" data-i18n="resume_btn">RESUME</button>
+            <button id="restartBtn" class="btn btn-secondary" data-i18n="restart_btn">RESTART</button>
+            <button id="backToMenuBtn" class="btn btn-secondary" data-i18n="back_to_menu_btn">MENU</button>
+        </div>
+
+        <div id="gameOverScreen" class="screen">
+            <h2 data-i18n="final_score">FINAL SCORE</h2>
+            <div class="score-summary">
+                <div id="finalScore" class="final-score">SCORE: 0</div>
+                <div id="bestScore" class="best-score">BEST SCORE: 0</div>
+            </div>
+            <div class="game-over-actions">
+                <button id="playAgainBtn" class="btn btn-primary" data-i18n="play_again_btn">PLAY AGAIN</button>
+                <button id="backToMenuFromGameOver" class="btn btn-secondary" data-i18n="back_to_menu_btn">MENU</button>
+            </div>
+        </div>
+
+        <div id="nameInputModal" class="modal">
+            <div class="modal-content">
+                <h3 data-i18n="new_record_text">NEW RECORD! YOU SCORED <span id="newRecordScore">0</span> POINTS!</h3>
+                <label for="playerNameInput" data-i18n="enter_name">ENTER YOUR NAME:</label>
+                <input type="text" id="playerNameInput" maxlength="15" placeholder="Your Name">
+                <div class="modal-actions">
+                    <button id="saveRecordBtn" class="btn btn-primary" data-i18n="save_record_btn">SAVE RECORD</button>
+                    <button id="skipRecordBtn" class="btn btn-secondary" data-i18n="skip_record_btn">SKIP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="github-pages-notice">
+        <p>🎮 <strong>GitHub Pages Version</strong> - Scores saved locally in your browser</p>
+        <p>📱 Works on mobile! Tap to jump</p>
+    </div>
+
+    <script src="script-github-pages.js"></script>
+</body>
+</html> 
