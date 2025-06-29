@@ -1092,4 +1092,35 @@ body::before {
     0% { transform: scale(1); }
     50% { transform: scale(0.95); }
     100% { transform: scale(1); }
+}
+
+.github-pages-notice {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(24, 25, 26, 0.9);
+    color: var(--color-primary);
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--color-primary);
+    font-size: 11px;
+    text-align: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    max-width: 200px;
+}
+
+.github-pages-notice p {
+    margin: 2px 0;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .github-pages-notice {
+        bottom: 5px;
+        right: 5px;
+        font-size: 10px;
+        padding: 6px 8px;
+        max-width: 150px;
+    }
 } 
