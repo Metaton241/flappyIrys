@@ -1,0 +1,29 @@
+{
+  "name": "Flappy Irys",
+  "description": "Flappy Bird game with Irys character and global leaderboard",
+  "image": "heroku/nodejs",
+  "repository": "https://github.com/your-username/irys-flappybird",
+  "keywords": ["node", "express", "flappy-bird", "game", "sqlite"],
+  "addons": [],
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "PORT": {
+      "description": "Port to run the server on",
+      "value": "3000"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+} 
